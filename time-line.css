@@ -1,0 +1,98 @@
+/* Timeline Section Wrapper */
+.timeline-section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f7f3ec; /* Matches your theme background */
+    padding: 60px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: #4a3b32;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* Timeline Layout */
+.timeline-container {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    padding-left: 20px;
+}
+
+/* Vertical connecting line */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background-color: #d1c4b2;
+}
+
+/* Individual Event Card with Animation */
+.timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+    padding-left: 35px;
+    
+    /* Animation Properties */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Stagger the animation delay for each item so they flow sequentially */
+.timeline-item:nth-child(1) { animation-delay: 0.2s; }
+.timeline-item:nth-child(2) { animation-delay: 0.4s; }
+.timeline-item:nth-child(3) { animation-delay: 0.6s; }
+
+/* Timeline Dot / Bullet */
+.timeline-dot {
+    position: absolute;
+    left: 17px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    background-color: #4a3b32;
+    border-radius: 50%;
+    border: 2px solid #f7f3ec;
+}
+
+/* Content Typography */
+.timeline-content h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: #4a3b32;
+    margin: 0 0 5px 0;
+}
+
+.timeline-time {
+    font-size: 0.85rem;
+    color: #7a6b62;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.timeline-content p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+}
+
+/* Keyframe Animation for Fade & Slide Up */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

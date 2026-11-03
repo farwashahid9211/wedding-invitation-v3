@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Wedding Invitation</title>
+    
+    <script src="script.js" defer></script>
+
+    <link rel="stylesheet" href="door-style.css">
+
+</head>
+<body>
+
+
+    
+    <!-- opening animation -->
+    <div class="mobile-screen">
+
+        <div class="content-preview">    </div>
+
+        <!-- 2. Animated Double Doors Wrapper -->
+        <div class="door-container" id="doorContainer">
+            <!-- Left Door -->
+            <div class="door left-door">
+            </div>
+            
+            <!-- Right Door -->
+            <div class="door right-door">
+            </div>
+
+            <!-- Hint Badge -->
+            <div class="tap-hint">Tap screen to open</div>
+        </div>
+    </div>
+
+    <!-- JavaScript code added right before </body> -->
+    
+    
+    <script>
+    const doorContainer = document.getElementById('doorContainer');
+    
+
+    doorContainer.addEventListener('click', function() {
+        // 1. Add class to start opening CSS animation
+        doorContainer.classList.add('open');
+
+        // 2. Hide hint text immediately on click
+        const tapHint = document.querySelector('.tap-hint');
+        if (tapHint) tapHint.style.display = 'none';
+
+        // 3. Wait for the 2.5 second door animation to finish, then go to content.html
+        setTimeout(function() {
+            window.location.href = 'content.html';
+        }, 1300); // 1500 milliseconds = 1.5 seconds
+    });
+
+    
+</script>
+
+
+</body>
+</html>

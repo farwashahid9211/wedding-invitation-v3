@@ -1,0 +1,392 @@
+* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+  html, body {
+            width: 100%;
+            height: 100%;
+            background-color: #121212; /* Neutral dark backdrop for desktop viewing */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            /* justify-content: center; */
+            /* align-items: center; */
+            overflow: hidden;
+        }
+
+  .mobile-screen {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #cabaa2;
+    overflow-y: auto;
+    margin: 0 auto;
+}
+
+    .invitation-card {
+    position: relative; /* Allows content inside to layout properly */
+    width: 100%;
+    min-height: 100vh; /* Ensures full height so background is visible */
+    
+    /* Background setup */
+    background-image: url('poster-opened.jpg'); 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  
+}
+
+/* Inner Main Content (Revealed underneath) */
+    .rsvp-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .rsvp-content h1 {
+      font-size: 7.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      color: #3f4031;
+      font-weight: 300;
+    }
+
+    .rsvp-content h2 {
+      font-size: 2.2rem;
+      font-style: italic;
+      color: #343424;
+      margin-bottom: 25px;
+      font-weight: 400;
+    }
+
+    .rsvp-content p {
+      font-size: 3rem;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 30px;
+      max-width: 650px;
+    }
+
+    .message {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #cdbca0;
+}
+
+.message-text {
+    font-size: 3.1rem;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.8;
+    color: #4a3b32;
+    max-width: 85%;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+    .rsvp-button {
+      padding: 12px 32px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background-color: #2c3e50;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .rsvp-button:hover {
+      background-color: #8c7b6c;
+    }
+
+    /* Container box constraints */
+.slider-wrapper {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Horizontal scroll container */
+.slider {
+  display: flex;
+  aspect-ratio: 16 / 9;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbars for a clean look */
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual slides */
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dot Navigation at bottom */
+.slider-nav {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.slider-nav a {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.75);
+  transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+  background-color: #fff;
+}
+
+.timeline-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.timeline-icon {
+    width: 40px;
+    height: 40px;
+    color: #000000;
+    background: transparent;
+    margin-bottom: 10px;
+}
+
+.timeline-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #4a3b32;
+    margin: 0;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Timeline Section Wrapper */
+.timeline-section {
+    width: 95%;
+    min-height: 40vh;
+    
+    padding: 60px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns section items to the left */
+}
+
+.timeline-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #4a3b32;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-align: left;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+/* Timeline Layout pushed to the left */
+.timeline-container {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    margin: 0;
+    padding-left: 15px;
+}
+
+/* Vertical connecting line */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 21px;
+    top: 10px;
+    bottom: 10px;
+    width: 1.5px;
+    background-color: #d1c4b2;
+}
+
+/* Individual Event Card - No background box or border */
+.timeline-item {
+    position: relative;
+    margin-bottom: 45px;
+    padding-left: 35px;
+    background: transparent; /* Removes any box background */
+    border: none;            /* Removes any borders */
+    box-shadow: none;        /* Removes any shadows */
+}
+
+/* Timeline Dot / Bullet */
+.timeline-dot {
+    position: absolute;
+    left: -15px;
+    top: 16px;
+    width: 19px;
+    height: 19px;
+    background-color: #4a3b32;
+    border-radius: 50%;
+    border: 2px solid #f7f3ec;
+}
+
+/* Content Typography */
+.timeline-content h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #4a3b32;
+    margin: 0 0 6px 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+    white-space: nowrap;      /* Forces the title to stay on one single line */
+    
+    text-align: left;
+}
+
+.timeline-time {
+    font-size: 1.85rem;
+    color: #6a5b52;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+.timeline-content p {
+    font-size: 1.85rem;
+    color: #555;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    text-align: left;
+}
+
+/* divider heart shape */
+    .divider-with-heart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%; /* Adjust width of the whole divider line */
+    margin: 20px auto; /* Centers the divider on the page */
+}
+
+.location-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.location-icon {
+    width: 36px;
+    height: 36px;
+    color: #000000;          /* Solid black stroke */
+    background: transparent; /* Fully transparent background */
+    margin-bottom: 8px;
+}
+
+.location-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #4a3b32;
+    margin: 0;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* map wrap */
+.map-wrapper {
+    width: 100%;
+    max-width: 650px;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 250px;
+    display: block;
+    border: none;
+}
+
+/* Creates the left and right lines using pseudo-elements */
+.divider-with-heart::before,
+.divider-with-heart::after {
+    content: "";
+    flex: 1;
+    border-bottom: 2px solid #4a3b32; /* Adjust color and thickness to match your theme */
+}
+
+/* Adds spacing between the lines and the heart */
+.divider-with-heart::before {
+    margin-right: 15px;
+}
+
+.divider-with-heart::after {
+    margin-left: 15px;
+}
+
+/* Styles the heart symbol in the middle */
+.heart-icon {
+    font-size: 22px; /* Adjust size of the heart */
+    color: #4a3b32;  /* Match the line color */
+    line-height: 1;
+}
+
+.scratch-card-text{
+    font-size: 3.6rem;    
+    color: aliceblue;
+    background-color: #121212;
+    width: 450px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50px;
+}
